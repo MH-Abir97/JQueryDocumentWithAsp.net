@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DataTable\\DataTable.csproj": {}
+    "E:\\Practics_Project\\DataTable\\DataTable.csproj": {}
   },
   "projects": {
-    "E:\\DataTable\\DataTable.csproj": {
+    "E:\\Practics_Project\\DataTable\\DataTable.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DataTable\\DataTable.csproj",
+        "projectUniqueName": "E:\\Practics_Project\\DataTable\\DataTable.csproj",
         "projectName": "DataTable",
-        "projectPath": "E:\\DataTable\\DataTable.csproj",
+        "projectPath": "E:\\Practics_Project\\DataTable\\DataTable.csproj",
         "packagesPath": "C:\\Users\\mhabi\\.nuget\\packages\\",
-        "outputPath": "E:\\DataTable\\obj\\",
+        "outputPath": "E:\\Practics_Project\\DataTable\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
