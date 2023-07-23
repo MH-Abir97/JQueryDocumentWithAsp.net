@@ -1,0 +1,209 @@
+﻿@*@model Student*@
+@{
+    ViewData["Title"] = "About";
+}
+
+@*<h1>About</h1>
+    <hr />
+
+    <p>View Data</p>
+    <div class="row">
+        <div class="col-md-4">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#SL</th>
+
+                        <th scope="col">Name</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var student in ViewData["Student"] as Dictionary<int, Student>)
+                    {
+                        <tr>
+
+                            <td>@student.Value.Id</td>
+                            <td>@student.Value.Name</td>
+
+
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <p>View Bag</p>
+    <div class="row">
+        <div class="col-md-4">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#SL</th>
+                        <th scope="col">Name</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var student in ViewBag.Student as Dictionary<int, Student>)
+                    {
+                        <tr>
+                            <td>@student.Value.Id</td>
+                            <td>@student.Value.Name</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <p>Temp Data</p>
+    <div class="row">
+        <div class="col-md-4">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#SL</th>
+                        <th scope="col">Name</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var student in TempData["StudentTemp"] as Dictionary<int, Student>)
+                    {
+                        <tr>
+                            <td>@student.Value.Id</td>
+                            <td>@student.Value.Name</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="row">
+        @foreach (var student in ViewBag.Student as Dictionary<int, Student>)
+        {
+            if (student.Value.Id % 2 == 0)
+            {
+            <div class="col-md-6">
+                @student.Value.Id  @student.Value.Name
+            </div>
+            }
+            else
+            {
+            <div class="col-md-6">
+                @student.Value.Id  @student.Value.Name
+            </div>
+            }
+        }
+
+
+    </div>*@
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col" style="text-align:right">Price</th>
+            <th scope="col" style="text-align:right">Action</th>
+
+        </tr>
+    </thead>
+    <tbody id="tableDataLoad">
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2" style="text-align:right">Total</td>
+            <td style="text-align:right" id="TotalValue"></td>
+        </tr>
+    </tfoot>
+</table>
+@*<div class="container">
+        <span>Hover over me</span>
+        <div class="hidden-div">
+            This is the hidden content.
+        </div>
+    </div>*@
+
+
+@*<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col" style="text-align:right">Price</th>
+        </tr>
+    </thead>
+    <tbody id="toogleDataShow">
+    </tbody>
+
+</table>*@
+
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Details Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col" style="text-align:right">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="modalListData">
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+
+    td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        position: relative;
+    }
+
+    .hidden-div {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 5px;
+        text-align: left;
+        z-index: 1;
+        cursor: pointer;
+        display: block;
+    }
+</style>
+
+@section Scripts{
+    <script src="~/js/DynamicTable.js"></script>
+
+}
+
+
+
+
+
