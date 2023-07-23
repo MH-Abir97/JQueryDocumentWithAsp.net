@@ -41,13 +41,16 @@ $(function () {
     var totalPrice = 0;
     for (var i = 0; i < listofData.length; i++) {
         totalPrice += listofData[i].Price;
+        /*<button type="button" id="editBtn" value="${listofData[i].Id}" class="btn btn-info show-button">Info</button></td >*/
         var tr = `<tr>
                <td>${listofData[i].Id}</td>
                <td>${listofData[i].Name}</td>
                <td style="text-align:right">${listofData[i].Price}</td>
               <td style="text-align:right" >
-                <button type="button"  id="editBtn" value="${listofData[i].Id}" class="btn btn-info show-button">Info</button></td>
-                
+                <span  data-toggle="tooltip" value="${listofData[i].Id}" id="editBtn" class="show-button" title="Hello">
+                 <button class="btn btn-primary "   value="${listofData[i].Id}"  type="button" >Disabled button</button>
+                </span>
+             </td>
              </tr>`;
         $("#tableDataLoad").append(tr);
        
@@ -73,36 +76,48 @@ $(function () {
     //    })
     //});
 
+    $("#tableDataLoad").on('click', '#editBtn', function () {
+        debugger;
+        var Id = $(this).attr("value");
+        var TempId = Number(Id);
+        // var title = "Hello";
+        var temp = $(this).attr("title");
+        var t = temp;
+    });
 
-    $(".show-button").hover(
-        function () {
-            // Show the hidden div when hovering over the button's parent (td)
-            //toogleDataShow
-            $(".toogleDataShow").empty();
-            var Id = $(this).attr("value");
-            var TempId = Number(Id);
-            var card = '';
-            $(this).parent().append(`<div class="hidden-div toogleDataShow" ></div>`);
-               $.each(listofData, function (index, item) {
-                   if (item.Id == TempId) {
-                       card = `<div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <p class="card-text">Id: ${item.Id}</p>
-                                <p class="card-text">Name: ${item.Name}</p>
-                            </div>
-                            </div>`;
-                       $(".toogleDataShow").append(card);
-                   }
-
-               });
-            
-        },
-        function () {
+    //$(".show-button").hover(
+    //    function () {
+         
+    //        $(".toogleDataShow").empty();
+    //        var Id = $(this).attr("value");
+    //        var TempId = Number(Id);
+    //        var temp = $("span").attr("title");
            
-            $(this).parent().find(".hidden-div").remove();
-        }
-    );
+    //        var t = temp;
+    //        var card = '';
+    //        $(this).parent().append(`<div class="hidden-div toogleDataShow" ></div>`);
+    //           $.each(listofData, function (index, item) {
+    //               if (item.Id == TempId) {
+    //                   card = `<div class="card" style="width: 18rem;">
+    //                        <div class="card-body">
+    //                            <p class="card-text">Id: ${item.Id}</p>
+    //                            <p class="card-text">Name: ${item.Name}</p>
+    //                        </div>
+    //                        </div>`;
+    //                   $(".toogleDataShow").append(card);
+    //               }
+
+    //           });
+            
+    //    },
+    //    function () {
+           
+    //        $(this).parent().find(".hidden-div").remove();
+    //    }
+    //);
 
 
- 
+    $('[data-toggle="tooltip"]').tooltip(function () {
+    
+    })
 });
