@@ -6069,25 +6069,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mhabi\\.nuget\\packages\\": {},
+    "C:\\Users\\Anwar\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Practics_Project\\DataTable\\DataTable.csproj",
+      "projectUniqueName": "F:\\Practics\\JQueryDocumentWithAsp.net\\DataTable\\DataTable.csproj",
       "projectName": "DataTable",
-      "projectPath": "E:\\Practics_Project\\DataTable\\DataTable.csproj",
-      "packagesPath": "C:\\Users\\mhabi\\.nuget\\packages\\",
-      "outputPath": "E:\\Practics_Project\\DataTable\\obj\\",
+      "projectPath": "F:\\Practics\\JQueryDocumentWithAsp.net\\DataTable\\DataTable.csproj",
+      "packagesPath": "C:\\Users\\Anwar\\.nuget\\packages\\",
+      "outputPath": "F:\\Practics\\JQueryDocumentWithAsp.net\\DataTable\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\mhabi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Anwar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
