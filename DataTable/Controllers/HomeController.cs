@@ -1,5 +1,6 @@
 ﻿using DataTable.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,23 @@ namespace DataTable.Controllers
         }
         public IActionResult About()
         {
+            List<Student> list = new List<Student>()
+            {
+                new Student { Id = 1, Name = "Abir" },
+                new Student { Id = 2, Name = "Bellal" },
+                new Student { Id = 3, Name = "Kasem" },
+                new Student { Id = 4, Name = "Suvo" }
+            };
+              // public List<SelectListItem> Options { get; set; }
+           
+            var Options =list.ToList().Select(a =>new SelectListItem{Value = a.Id.ToString(),Text = a.Name});
+
+            var dropdownList = list.ToList().Select(s => new SelectListItem
+            {
+                Value=s.Id.ToString(),
+                Text=s.Name,
+            });
+         
             //Dictionary<int, Student> list = new Dictionary<int, Student>();
             //list.Add(1,new Student { Id=1,Name="Abir"});
             //list.Add(2, new Student { Id = 2, Name = "Suvo" });
@@ -32,7 +50,7 @@ namespace DataTable.Controllers
             //list.Add(5, new Student { Id = 5, Name = "Fysal" });
             //list.Add(6, new Student { Id = 6, Name = "Suja Uddin" });
             //ViewData["Student"] = list;
-            //ViewBag.Student = list;
+            ViewBag.Student = dropdownList;
 
             //TempData["StudentTemp"] = list;
 
@@ -43,6 +61,35 @@ namespace DataTable.Controllers
 
 
             return View();
+        }
+
+        public IActionResult DataList()
+        {
+            List<Student> list = new List<Student>()
+            {
+                new Student{Id=1,Name="Abir"},
+                new Student{Id=2,Name="Bellal"},
+                new Student{Id=3,Name="Kasem"},
+                new Student{Id=4,Name="Suvo"}
+            };
+
+            IDictionary<int, Student> dictonary = new Dictionary<int, Student>();
+            dictonary.Add(1, new Student { Id = 1, Name = "Fysal" });
+
+
+
+
+            var stu = list.Where(s => s.Id == 1);
+
+            var stuList = list.Where(s => s.Id == 1).ToList();
+
+            var l = stuList;
+
+            foreach (var item in stu)
+            {
+                Console.WriteLine(item.Id);
+            }
+            return Json(stu);
         }
         public IActionResult Privacy()
         {

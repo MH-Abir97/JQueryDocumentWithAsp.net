@@ -1,8 +1,20 @@
-﻿@*@model Student*@
+﻿@model Student
+
 @{
     ViewData["Title"] = "About";
 }
+@*@model DataTable.SelectValue;
 
+<select id="dlCurveBasis" class="form-control">
+    <option value="@SelectValue.Aggregates">Aggregates</option>
+    <option value="@SelectValue.Premium">Premium</option>
+</select>
+<br />*@
+<br />
+<select class="form-control"  asp-items="@ViewBag.Student"> 
+    <option selected="selected" value="">Please select</option>
+</select>
+<br />
 @*<h1>About</h1>
     <hr />
 
@@ -134,17 +146,17 @@
 
 
 @*<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Name</th>
-            <th scope="col" style="text-align:right">Price</th>
-        </tr>
-    </thead>
-    <tbody id="toogleDataShow">
-    </tbody>
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col" style="text-align:right">Price</th>
+            </tr>
+        </thead>
+        <tbody id="toogleDataShow">
+        </tbody>
 
-</table>*@
+    </table>*@
 
 <div class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -177,8 +189,8 @@
 </div>
 
 @*<span class="d-inline-block" tabindex="0" id="example" data-toggle="tooltip" title="hhh">
-    <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>Disabled button</button>
-</span>*@
+        <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>Disabled button</button>
+    </span>*@
 
 <style>
 
