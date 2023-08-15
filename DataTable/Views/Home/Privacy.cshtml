@@ -1,6 +1,46 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First JavaScript</h1>
+<table id="dynamicTable">
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+  </tr>
+  
+</table>
+
+
+<p id="demo"></p>
+
+<script>
+// Get a reference to the table
+var table = document.getElementById("dynamicTable");
+var tempList=[];
+// Iterate through each row in the table
+for (var i = 0; i < table.rows.length; i++) {
+  var row = table.rows[i];
+
+  // Get the cells in the current row
+  var cells = row.cells;
+  var obj={};
+  // Assuming each row has two cells (for first name and last name)
+   obj.firstName = cells[0].innerText;
+   obj.lastName = cells[1].innerText;
+
+  // Do something with the retrieved values
+ 
+   tempList.push(obj);
+   console.log(tempList);
+}
+
+</script>
+
+</body>
+</html> 
